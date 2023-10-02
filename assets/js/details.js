@@ -1,48 +1,16 @@
-const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get('id');
-
-try {
-    getRecipe(id);
-} catch (error) {
-    console.error(error);
-}
-
-async function getRecipe(id) {
-    try {
-        const response = await fetch(`https://dummyjson.com/products/${id}`);
-
-        if (response.status === 200) {
-            const product = await response.json();
-            displayRecipe(product);
-        } else {
-            handleLoadingError();
-        }
-    } catch (error) {
-        console.error(error);
-        handleLoadingError();
-    }
-}
-
-function displayRecipe(product) {
-    const content = document.getElementById("content");
-    content.innerHTML = `
+const urlParams=new URLSearchParams(window.location.search),id=urlParams.get("id");try{getRecipe(id)}catch(c){console.error(c)}async function getRecipe(c){try{var r=await fetch("https://dummyjson.com/products/"+c);200===r.status?displayRecipe(await r.json()):handleLoadingError()}catch(c){console.error(c),handleLoadingError()}}function displayRecipe(c){document.getElementById("content").innerHTML=`
     <div class="product-card">
     <div class="product-image">
-      <img src="${product.thumbnail}" alt="Product Image">
+      <img src="${c.thumbnail}" alt="Product Image">
     </div>
     <div class="product-details">
-      <h1 class="product-title">${product.title}</h1>
-      <p class="product-description">${product.description}</p>
-      <p class="product-price">Price: ${product.price}</p>
-      <p class="product-discount">Discount: ${product.discountPercentage}</p>
+      <h1 class="product-title">${c.title}</h1>
+      <p class="product-description">${c.description}</p>
+      <p class="product-price">Price: ${c.price}</p>
+      <p class="product-discount">Discount: ${c.discountPercentage}</p>
       <p class="product-final-price">Final Price: $479.04</p>
-      <p class="product-rating">Rating: ${product.rating}</p>
-      <p class="product-brand">Brand:${product.brand}</p>
+      <p class="product-rating">Rating: ${c.rating}</p>
+      <p class="product-brand">Brand:${c.brand}</p>
     </div>
   </div>
-    `;
-}
-
-function handleLoadingError() {
-    console.error("Failed to load data.");
-}
+    `}function handleLoadingError(){console.error("Failed to load data.")}
