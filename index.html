@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS files -->
+    <link rel="stylesheet" href="assets/vendor/css/all.min.css">
+    <link rel="stylesheet" href="assets/vendor/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/webfonts/">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+    <header class="vh-100">
+        <div class="title my-5 mx-3">
+            <h1>My Online Shop</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-2 position-relative ms-auto">
+                <div class="sidebar d-flex flex-column flex-shrink-0 p-3 text-white bg-dark">
+                    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <span class="fs-4 ps-3">My Categories</span>
+                    </a>
+                    <hr>
+                    <ul class="nav nav-pills flex-column mb-auto" id="categories">
+                        <li class="nav-item">
+                            <a class="nav-link active">All</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="row">
+                    <form id="search-product-form" class="mb-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search product by category" aria-label="Search" aria-describedby="search-button">
+                            <button class="btn btn-primary" type="submit" id="search-button">Search</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="row" id="content"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Bootstrap JS file -->
+    <script src="assets/vendor/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS file -->
+    <script src="assets/js/main.js"></script>
+    
+</body>
+</html>
